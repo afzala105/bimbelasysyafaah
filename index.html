@@ -45,7 +45,8 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Bimbel As Syafa'ah
+              Bimbel As Syafa'ah <br>
+              <span style="font-size: 16px">Desa Mrican, Sragi, Kab. Pekalongan</span>
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -356,9 +357,9 @@
                   <input id="pesan" type="text" placeholder="Message">
                 </div>
                 <div id="kirim" class="mt-5">
-                  <button type="submit">
+                  <a id="link" href="#"><button type="button">
                     Kirim
-                  </button>
+                  </button></a>
                 </div>
               </div>
 
@@ -480,7 +481,7 @@
   let kirim = document.getElementById('kirim');
   let number = "628557026399";
   let url = "https://wa.me/" + number;
-  let a = document.createElement('a');
+  let a = document.getElementById('link');
   let temp = "";
 
   pesan.addEventListener('change',(e)=>{
@@ -488,14 +489,7 @@
     temp = temp.replace(/\s+/g,'%20');
     let link = url + "/?chat=" + temp;
 
-    a.setAttribute('href', link);
-  });
-
-  kirim.addEventListener('click',function(e){
-    if(temp != ""){
-      //alert(temp);
-      a.click();
-    }
+    a.href = link;
   });
 
 </script>
