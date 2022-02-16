@@ -493,16 +493,27 @@ let nm = "";
 let text = "";
 nama.addEventListener('change', (e)=>{
  nm = "*" + e.target.value + "*, ";
+
 });
 
-  pesan.addEventListener('change',(e)=>{
+  pesan.addEventListener('input',(e)=>{
+    if(nm == ""){
+      alert('Masukan nama Anda dahulu');
+      nama.focus();
+    }
     text = e.target.value;
     //temp = temp.replace(/\s+/g,'%20');
     let link = url + "&text=" + temp + nm + text;
     link = encodeURI(link);
     a.href = link;
   });
-
+  a.addEventListener('click', (e)=> {
+ if(nm == ""){
+  alert('Mohon isikan nama Anda');
+  pesan.value = "";
+  nama.focus();
+}
+});
 </script>
 
 
