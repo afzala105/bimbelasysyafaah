@@ -350,7 +350,7 @@
             <div class="contact_form-container">
               <div>
                 <div>
-                  <input type="text" placeholder="Name">
+                  <input id="nama" required type="text" placeholder="Name">
                 </div>
                 <div>
                   <input type="email" placeholder="Email">
@@ -359,7 +359,7 @@
                   <input type="text" placeholder="Phone Number">
                 </div>
                 <div class="mt-5">
-                  <input id="pesan" type="text" placeholder="Message">
+                  <input id="pesan" required type="text" placeholder="Message">
                 </div>
                 <div id="kirim" class="mt-5">
                   <a id="link" href="#"><button type="button">
@@ -487,13 +487,19 @@
   let number = "628557026399";
   let url = "https://api.whatsapp.com/send/?phone=" + number;
   let a = document.getElementById('link');
-  let temp = "";
+  let temp = "Assalamu 'alaikum, saya ";
+let nama = document.getElementById('nama');
+let nm = "";
+let text = "";
+nama.addEventListener('change', (e)=>{
+ nm = "*" + e.target.value + "*, ";
+
 
   pesan.addEventListener('change',(e)=>{
-    temp = e.target.value;
-    temp = temp.replace(/\s+/g,'%20');
-    let link = url + "&text=" + temp;
-
+    text = e.target.value;
+    //temp = temp.replace(/\s+/g,'%20');
+    let link = url + "&text=" + temp + nm + text;
+    link = encodeURI(link);
     a.href = link;
   });
 
