@@ -499,7 +499,7 @@ nama.addEventListener('change', (e)=>{
   pesan.addEventListener('input',(e)=>{
     if(nm == ""){
       alert('Masukan nama Anda dahulu');
-      nama.setAttribute('autofocus','');
+      nama.click();
     }
     text = e.target.value;
     //temp = temp.replace(/\s+/g,'%20');
@@ -507,11 +507,12 @@ nama.addEventListener('change', (e)=>{
     link = encodeURI(link);
     a.href = link;
   });
+
   a.addEventListener('click', (e)=> {
  if(nm == ""){
   alert('Mohon isikan nama Anda');
   pesan.value = "";
-  nama.setAttribute('autofocus','');
+  nama.focus();
 }
 });
 </script>
