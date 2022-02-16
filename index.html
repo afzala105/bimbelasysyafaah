@@ -485,14 +485,14 @@
   let pesan = document.getElementById('pesan');
   let kirim = document.getElementById('kirim');
   let number = "628557026399";
-  let url = "https://wa.me/" + number;
+  let url = "https://api.whatsapp.com/?phone=" + number;
   let a = document.getElementById('link');
   let temp = "";
 
   pesan.addEventListener('change',(e)=>{
     temp = e.target.value;
     temp = temp.replace(/\s+/g,'%20');
-    let link = url + "/?chat=" + temp;
+    let link = url + "&text=" + temp;
 
     a.href = link;
   });
