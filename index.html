@@ -679,8 +679,9 @@ let pengajar = document.getElementsByClassName('pengajar');
 
 for(let x = 0; x < pengajar.length; x++){
   pengajar[x].style.backgroundRepeat= "no-repeat";
- pengajar[x].backgroundPosition= "center center";
- pengajar[x].backgroundSize= "cover";
+ pengajar[x].style.backgroundPosition= "center center";
+ pengajar[x].style.backgroundSize= "cover";
+ console.log(pengajar[x].getAttribute('style'));
 }
 
 
