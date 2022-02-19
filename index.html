@@ -39,9 +39,6 @@
  width : 100%;
  border-radius: 100px;
  background: #34deeb;
- background-repeat: no-repeat;
- background-position: center center;
- background-size: cover;
 }
 
 </style>
@@ -278,7 +275,7 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="client_img-box">
-<div class="pengajar" style="background: url('images/pengajar/1.jpg') no-repeat center center; background-size: cover;"></div>
+<div class="pengajar" style="background: url('images/pengajar/1.jpg');"></div>
 </div>
               </div>
               <div class="col-md-9">
@@ -678,6 +675,16 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
 <script type="text/javascript">
+let pengajar = document.getElementsByClassName('pengajar');
+
+for(let x = 0; x < pengajar.length; x++){
+  pengajar[x].style.backgroundRepeat: "no-repeat";
+ pengajar[x].backgroundPosition: "center center";
+ pengajar[x].backgroundSize: "cover";
+}
+
+
+
   let pesan = document.getElementById('pesan');
   let kirim = document.getElementById('kirim');
   let number = "628557026399";
