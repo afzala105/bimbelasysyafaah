@@ -158,7 +158,7 @@
           </div>
         </div>
         
-        <div class="row form-group mb-1">
+        <div class="row form-group mb-3">
           <div class="col-md-4 col-12">
             <label class="btn btn-block btn-primary" for="ttl">Tempat, Tanggal Lahir</label>
           </div>
@@ -288,15 +288,6 @@
         </div>
 
         
-        <div class="row form-group mb-3">
-          <div class="col-md-4 col-12">
-            <label class="btn btn-block btn-primary" for="waktu">Waktu Pendaftaran</label>
-          </div>
-          <div class="col-md-8 col-12">
-            <input name="waktu" id="waktu" type="text" class="form-control" readonly />
-          </div>
-        </div>
-
         <div class="row form-group mb-3">
           <div class="col-md-12 col-12">
             <label class="btn btn-block btn-primary" for="">Nama Orang Tua</label>
@@ -429,7 +420,12 @@
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-
+  <script>
+    let btn = document.getElementsByClassName('btn');
+    for(let n = 0; n < btn.length; n++){
+      btn[n].classList.add('mb-0');
+    }
+  </script>
 
 </body>
 
